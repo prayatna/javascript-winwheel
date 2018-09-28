@@ -174,11 +174,11 @@ function Winwheel(options, drawWheel)
     // and pass the options to it so the animation is set. Otherwise create default animation object.
     if ((options != null) && (options['animation']) && (typeof(options['animation']) !== 'undefined'))
     {
-        this.animation = new Animation(options['animation']);
+        this.animation = new WinwheelAnimation(options['animation']);
     }
     else
     {
-        this.animation = new Animation();
+        this.animation = new WinwheelAnimation();
     }
 
     // ------------------------------------------
@@ -2107,7 +2107,7 @@ function Pin(options)
 // ====================================================================================================================
 // Class for the wheel spinning animation which like a segment becomes a property of the wheel.
 // ====================================================================================================================
-function Animation(options)
+function WinwheelAnimation(options)
 {
     // Most of these options are null because the defaults are different depending on the type of animation.
     defaultOptions = {
